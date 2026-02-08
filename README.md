@@ -53,3 +53,5 @@ public class Character {
     }
 }
 
+<img width="951" height="228" alt="image" src="https://github.com/user-attachments/assets/cbc05adc-d1f3-4664-801a-bc3f504278fe" />
+
