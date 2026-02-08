@@ -1,0 +1,56 @@
+@startuml
+skinparam monochrome true
+
+interface AttackStrategy {
+    +attack(): void
+}
+
+class SwingSword {
+    +attack(): void
+}
+
+class CastSpell {
+    +attack(): void
+}
+
+class ShootArrow {
+    +attack(): void
+}
+
+SwingSword ..|> AttackStrategy
+CastSpell ..|> AttackStrategy
+ShootArrow ..|> AttackStrategy
+
+interface DefenseStrategy {
+    +defend(): void
+}
+
+class Shield {
+    +defend(): void
+}
+
+class Dodge {
+    +defend(): void
+}
+
+class CreateMagicBarrier {
+    +defend(): void
+}
+
+Shield ..|> DefenseStrategy
+Dodge ..|> DefenseStrategy
+CreateMagicBarrier ..|> DefenseStrategy
+
+class Character {
+    -type: String
+    -attackStrategy: AttackStrategy
+    -defenseStrategies: List<DefenseStrategy>
+    +Character(type: String)
+    +attack(): void
+    +defend(): void
+}
+
+Character o-- AttackStrategy
+Character o-- "*" DefenseStrategy
+
+@enduml
